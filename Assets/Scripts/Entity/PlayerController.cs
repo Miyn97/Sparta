@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,5 +30,13 @@ public class PlayerController : MonoBehaviour
         Vector2 move = new Vector2(moveX, moveY).normalized;
         animator.SetBool(isMoveHash, move != Vector2.zero);
         rigidBody.velocity = move * speed;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            SceneManager.LoadScene("MiniGameScene");
+        }
     }
 }
