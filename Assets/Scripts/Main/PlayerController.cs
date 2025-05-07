@@ -38,5 +38,10 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene("MiniGameScene");
         }
+
+        if (collision.CompareTag("NPC2") && Input.GetKeyDown(KeyCode.F))
+        {
+            SceneManager.LoadScene("MiniGameScene");
+        }
     }
 }
