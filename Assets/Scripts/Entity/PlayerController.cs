@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (collision.CompareTag("NPC") && Input.GetKeyDown(KeyCode.F))
         {
             SceneManager.LoadScene("MiniGameScene");
         }
